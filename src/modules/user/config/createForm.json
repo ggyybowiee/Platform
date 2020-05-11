@@ -1,0 +1,85 @@
+{
+  "formSetting": {
+      "isShowLabel": true,
+      "isAutoSubmit": false,
+      "isLabelInline": false,
+      "formItemLayout": {
+          "labelCol": {
+              "span": 6
+          },
+          "wrapperCol": {
+              "span": 18
+          }
+      }
+  },
+  "elements": [
+      {
+          "field": {
+              "label": "用户编号",
+              "name": "userCode"
+          },
+          "input": {
+              "type": "string",
+              "placeholder": "用户编号"
+          },
+          "id": 0,
+          "tooltip": "",
+          "readonly": false
+      },
+      {
+          "field": {
+              "label": "用户名",
+              "name": "userName",
+              "rules": [
+                  {
+                      "required": true
+                  }
+              ]
+          },
+          "input": {
+              "type": "string",
+              "placeholder": "用户名",
+              "rules": [
+                  {
+                      "label": "required",
+                      "value": "true"
+                  }
+              ]
+          },
+          "id": 1,
+          "readonly": false
+      },
+      {
+          "field": {
+              "label": "密码",
+              "name": "userPassword",
+              "rules": [
+                  {
+                      "label": "required",
+                      "value": "true"
+                  }
+              ]
+          },
+          "input": {
+              "type": "string",
+              "placeholder": "密码"
+          },
+          "id": 2,
+          "readonly": false
+      }
+  ],
+  "layout": {
+      "type": "grid",
+      "detail": [
+          [
+              0
+          ],
+          [
+              1
+          ],
+          [
+              2
+          ]
+      ]
+  }
+}

@@ -1,0 +1,139 @@
+{
+  "formSetting": {
+    "isShowLabel": true,
+    "isAutoSubmit": false,
+    "formItemLayout": {
+      "labelCol": {
+        "span": 6
+      },
+      "wrapperCol": {
+        "span": 18
+      }
+    }
+  },
+  "elements": [{
+      "field": {
+        "label": "资源类型",
+        "name": "resourceType",
+        "rules": [{
+          "required": true
+        }]
+      },
+      "input": {
+        "type": "enum",
+        "disabled": true,
+        "options": [{
+            "label": "路由",
+            "value": "0"
+          },
+          {
+            "label": "模块",
+            "value": "2"
+          },
+          {
+            "label": "应用",
+            "value": "1"
+          },
+          {
+            "label": "元素",
+            "value": "3"
+          }
+        ]
+      },
+      "id": 0
+    },
+    {
+      "field": {
+        "label": "应用码",
+        "name": "resourceCode",
+        "rules": [{
+          "required": true
+        }]
+      },
+      "input": {
+        "type": "string",
+        "disabled": false
+      },
+      "id": 1
+    },
+    {
+      "field": {
+        "label": "应用名",
+        "name": "resourceName",
+        "rules": [{
+          "required": true
+        }]
+      },
+      "input": {
+        "type": "string",
+        "disabled": false
+      },
+      "id": 2
+    },
+    {
+      "field": {
+        "label": "应用图标",
+        "name": "resourceIcon",
+        "rules": null
+      },
+      "input": {
+        "type": "string",
+        "disabled": false
+      },
+      "id": 3
+    },
+    {
+      "field": {
+        "label": "是否移动屏",
+        "name": "isMobileResource",
+        "rules": null
+      },
+      "input": {
+        "type": "boolean",
+        "disabled": false,
+        "defaultValue": false,
+        "initialValue": false,
+        "valueMap": {
+          "true": "1",
+          "false": "0"
+        }
+      },
+      "id": 67
+    },
+    {
+      "field": {
+        "label": "资源描述",
+        "name": "resourceDesc",
+        "rules": []
+      },
+      "input": {
+        "type": "textArea",
+        "disabled": false
+      },
+      "id": 6
+    }
+  ],
+  "layout": {
+    "type": "grid",
+    "detail": [
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ],
+      [
+        67
+      ],
+      [
+        6
+      ]
+    ]
+  }
+}

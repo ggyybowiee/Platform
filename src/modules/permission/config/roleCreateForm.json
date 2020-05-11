@@ -1,0 +1,59 @@
+{
+  "formSetting": {
+    "isShowLabel": true,
+    "isAutoSubmit": false,
+    "isLabelInline": false,
+    "formItemLayout": {
+      "labelCol": {
+        "span": 6
+      },
+      "wrapperCol": {
+        "span": 18
+      }
+    }
+  },
+  "elements": [{
+      "field": {
+        "label": "角色码",
+        "name": "roleCode",
+        "rules": [{
+          "required": true,
+          "message": "请填写角色码"
+        }]
+      },
+      "input": {
+        "type": "string",
+        "disabled": false,
+        "maxlength": 20
+      },
+      "id": 0
+    },
+    {
+      "field": {
+        "label": "角色名",
+        "name": "roleName",
+        "rules": [{
+          "required": true,
+          "message": "请填写角色名"
+        }]
+      },
+      "input": {
+        "type": "string",
+        "disabled": false,
+        "maxlength": 20
+      },
+      "id": 1
+    }
+  ],
+  "layout": {
+    "type": "grid",
+    "detail": [
+      [
+        0
+      ],
+      [
+        1
+      ]
+    ]
+  }
+}

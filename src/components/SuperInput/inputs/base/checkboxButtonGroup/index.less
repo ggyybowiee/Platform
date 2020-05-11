@@ -1,0 +1,31 @@
+@import '~antd/lib/style/themes/default.less';
+.checkboxButtonGroup {
+  display: inline;
+  list-style: none;
+  padding-left: 0;
+
+  & > * {
+    display: inline-block;
+    padding: 0 14px;
+    margin-right: 20px;
+    cursor: pointer;
+
+    &.selected {
+      color: #fff;
+      background-color: @primary-color;
+    }
+  }
+}
+
+:global {
+  .ant-radio-button-wrapper-checked {
+    background: @primary-color;
+    color:#fff;
+    border-color: @primary-color;
+    box-shadow: -1px 0 0 0 @primary-color;
+    z-index: 1;
+  }
+  .ant-radio-button-wrapper:hover {
+    color:#fff;
+  }
+}

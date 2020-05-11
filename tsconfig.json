@@ -1,0 +1,24 @@
+{
+    "compilerOptions": {
+        "lib": ["es2016", "dom"],
+        "target": "es6",
+        "moduleResolution": "node",
+        "jsx": "preserve",
+        "module": "es2015",
+        "experimentalDecorators": true,
+        "allowSyntheticDefaultImports": true,
+        "sourceMap": true,
+        "noUnusedParameters": true,
+        "noUnusedLocals": true,
+        "baseUrl": "./",
+        "paths": {
+          "components/*": ["src/components/*"],
+          "utils/*": ["src/utils/*"],
+          "services/*": ["src/services/*"],
+          "layouts/*": ["src/layouts/*"]
+        }
+    },
+    "exclude": [
+        "node_modules"
+    ]
+}

@@ -1,0 +1,51 @@
+.wrap {
+
+  .card {
+    height: 72px;
+    position: relative;
+    background-color: #fafafa;
+    &:hover {
+      .operations {
+        opacity: 1;
+      }
+    }
+
+    :global {
+      .ant-card-body {
+        padding: 10px 12px;
+      }
+    }
+  }
+}
+
+.badge {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+.formItem {
+  margin-bottom: 10px!important;
+}
+
+.elementPlaceholder {
+  position: relative;
+  & > .card {
+    display: none;
+  }
+  &:hover {
+    & > :global(.super-input) {
+      // display: none;
+      opacity: .1;
+    }
+    & > .card {
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: block;
+      opacity: .86;
+      width: 100%;
+    }
+  }
+}
+

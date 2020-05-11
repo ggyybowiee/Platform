@@ -1,0 +1,112 @@
+import React from 'react';
+import { connect } from 'dva';
+import _ from 'lodash';
+import { Input, Modal, Icon } from 'antd';
+import classnames from 'classnames';
+import styles from './index.css';
+
+function mapConnectProps(state, connectProps) {
+  return _.mapValues(connectProps, ({ path, mapValues, unshift }, key) => {
+    let value = _.get(state, path);
+    if (mapValues) {
+      if (_.isObject(mapValues)) {
+        value = _.map(value, item => {
+          return _.mapValues(mapValues, v => item[v]);
+        });
+      }
+    }
+
+    if (unshift) {
+      value = [ ...unshift, ...value ];
+    }
+
+    return value;
+  });
+}
+
+class InputConnectWrap extends React.Component {
+  render() {
+    const { connectedProps, Comp, ...otherProps } = this.props;
+    return (
+      <Comp {...otherProps} {...connectedProps} />
+    );
+  }
+}
+
+class SuperInput extends React.Component {
+  state = {
+    modalVisible: false,
+  }
+  constructor(props) {
+    super(props);
+
+    this.state.Comp = this.updateConnectedComp(props);
+  }
+
+  componentWillUpdate(prevProps) {
+    if (prevProps.type !== this.props.type || !_.isEqual(prevProps.connectProps, this.props.connectProps)) {
+      this.updateConnectedComp(prevProps);
+    }
+  }
+
+  updateConnectedComp(props) {
+    const { type, connectProps } = props || this.props;
+    const Comp = type ? SuperInput.CompMap[type] : SuperInput.DefaultComp;
+
+    const StateComp = !_.isEmpty(connectProps)
+      ? connect(state => ({ ...mapConnectProps(state, connectProps), Comp }))(InputConnectWrap)
+      : Comp;
+    this.setState({
+      Comp: StateComp,
+    });
+    return StateComp
+  }
+
+  handleOpenModal = () => {
+    this.setState({
+      modalVisible: true,
+    });
+  }
+
+  handleCloseModal = () => {
+    this.setState({
+      modalVisible: false,
+    });
+  }
+
+  render() {
+    const {
+      type,
+      modalMode = false,
+      className,
+      connectProps,
+      ...inputProps
+    } = this.props;
+    const { modalVisible, Comp } = this.state;
+
+    const comp = (
+      <div className={classnames('super-input', className)}>
+        <Comp {...inputProps} />
+      </div>
+    );
+
+    if (!modalMode) {
+      return comp;
+    }
+
+    return (
+      <div className="super-input-modal-container">
+        <Icon type={type} onClick={this.handleOpenModal} className={styles.openModalIcon} />
+        <Modal visible={modalVisible} onCancel={this.handleCloseModal} onOk={this.handleCloseModal}>
+          {comp}
+        </Modal>
+      </div>
+    );
+  }
+}
+
+SuperInput.CompMap = {};
+
+SuperInput.DefaultComp = attr => (<Input {...attr} />);
+
+export default SuperInput;

@@ -1,0 +1,1 @@
+export default (target, toUnshift) => toUnshift.concat(target);

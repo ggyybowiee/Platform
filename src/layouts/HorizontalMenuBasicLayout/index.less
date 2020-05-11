@@ -1,0 +1,24 @@
+.contentLayout {
+  // padding-top: 64px;
+  position: relative;
+
+  height: 100vh;
+  display: flex;
+}
+
+.contentHeader {
+  padding: 0;
+  z-index: 1;
+}
+
+.contentContent {
+  flex: 1;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  padding: 24px 24px 0 24px;
+
+  &>:not(:last-child) {
+    flex: 1;
+  }
+}

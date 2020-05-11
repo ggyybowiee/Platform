@@ -1,0 +1,59 @@
+{
+  "form": {
+    "elements": [{
+        "field": {
+          "name": "resourceType",
+          "initialValue": "0"
+        },
+        "input": {
+          "type": "enum",
+          "options": [{
+              "label": "模块",
+              "value": "0"
+            },
+            {
+              "label": "实体",
+              "value": "1"
+            },
+            {
+              "label": "应用",
+              "value": "2"
+            }
+          ]
+        }
+      },
+      {
+        "field": {
+          "name": "search"
+        },
+        "input": {
+          "type": "search",
+          "placeholder": "输入编号或名称检索",
+          "style": {
+            "width": 220
+          }
+        }
+      }
+    ]
+  },
+  "filters": [{
+      "key": "resourceType",
+      "type": "search",
+      "searchFeilds": [
+        "resourceType"
+      ],
+      "matchType": "isEqual",
+      "syncUrl": true
+    },
+    {
+      "key": "search",
+      "type": "search",
+      "searchFeilds": [
+        "resourceName",
+        "resourceCode"
+      ],
+      "matchType": "includes",
+      "syncUrl": true
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "formSetting": {
+    "isShowLabel": true,
+    "isAutoSubmit": false,
+    "formItemLayout": {
+      "labelCol": {
+        "span": 6
+      },
+      "wrapperCol": {
+        "span": 18
+      }
+    }
+  },
+  "elements": [{
+      "field": {
+        "label": "图标名称",
+        "name": "name",
+        "rules": [{
+          "required": true,
+          "message": "名称为必填"
+        }]
+      },
+      "input": {
+        "type": "string",
+        "disabled": false
+      },
+      "id": 0
+    },
+    {
+      "field": {
+        "label": "文件",
+        "name": "file"
+      },
+      "input": {
+        "type": "image",
+        "submitType": "FormData",
+        "action": "",
+        "disabled": false,
+        "maxlength": 1024,
+        "accept": "image/svg+xml"
+      },
+      "id": 1
+    }
+  ],
+  "layout": {
+    "type": "grid",
+    "detail": [
+      [
+        0
+      ],
+      [
+        1
+      ]
+    ]
+  }
+}

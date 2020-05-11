@@ -1,0 +1,36 @@
+@import '~antd/lib/style/themes/default.less';
+.iconWrap {
+  position: relative;
+  :global {
+    .ant-card-head-title {
+      overflow: visible;
+    }
+  }
+}
+
+.remove {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  opacity: 0;
+  color: @error-color;
+  transition: all .2s ease;
+
+  .iconItem:hover & {
+    opacity: 1;
+  }
+}
+
+.iconItem {
+  width: 100%;
+  height: 7rem;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.deleting {
+  opacity: .5;
+}

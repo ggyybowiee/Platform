@@ -1,0 +1,38 @@
+{
+    "columns": [
+        {
+            "title": "资源类型",
+            "dataIndex": "resourceType",
+            "key": "resourceType",
+            "formatter": {
+                "type": "permission-resource-type"
+            }
+        },
+        {
+            "title": "资源码",
+            "dataIndex": "resourceCode",
+            "key": "resourceCode"
+        },
+        {
+            "title": "资源名",
+            "dataIndex": "resourceName",
+            "key": "resourceName"
+        },
+        {
+            "title": "资源图标",
+            "dataIndex": "resourceIcon",
+            "key": "resourceIcon"
+        },
+        {
+            "title": "父资源",
+            "dataIndex": "parentResourceCode",
+            "key": "parentResourceCode"
+        },
+        {
+            "title": "资源内容",
+            "dataIndex": "resourceContent",
+            "key": "resourceContent"
+        }
+    ],
+    "oprs": true
+}
