@@ -49,7 +49,7 @@
     "js-cookie": "^2.2.0",
     "lodash": "4.17.4",
     "lodash-decorators": "4.4.1",
-    "moment": "2.19.1",
+    "moment": "2.25.3",
     "numeral": "2.0.6",
     "omit.js": "1.0.0",
     "path-to-regexp": "2.1.0",
